@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="public/ourlogo.jpg" alt="ሀሴት Delivery Logo" width="140" />
+<img src="public/ourlogo.jpg" alt="ሀሴት Delivery Logo" width="120" />
+
+<img src="src/assets/027612d655664ce5469a768edc12392eca0af979.png" alt="ሀሴት Delivery Branding" width="200" />
 
 # ሀሴት Delivery — Frontend  
 ### React + TypeScript
@@ -15,6 +17,7 @@
 [![Vite](https://img.shields.io/badge/Vite-4.4.0-646cff?logo=vite)](https://vitejs.dev/)
 
 </div>
+
 
 
 ---
