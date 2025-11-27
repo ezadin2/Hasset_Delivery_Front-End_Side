@@ -15,7 +15,7 @@ const ParticleBackground = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     let animationFrameId;
 
@@ -64,7 +64,7 @@ const ParticleBackground = () => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       particles.forEach(particle => {
         particle.update();
         particle.draw();
@@ -142,13 +142,13 @@ const ServiceCard = ({ icon: Icon, title, description, gradient, index }) => {
             animate={{ rotate: isHovered ? 180 : 0 }}
             transition={{ duration: 1 }}
           />
-          
+
           {/* Floating Icon */}
           <motion.div
             className={`bg-gradient-to-br ${gradient} w-20 h-20 rounded-2xl flex items-center justify-center mb-6 relative`}
-            animate={{ 
+            animate={{
               y: isHovered ? [-5, 5, -5] : 0,
-              rotate: isHovered ? [0, 5, -5, 0] : 0 
+              rotate: isHovered ? [0, 5, -5, 0] : 0
             }}
             transition={{ duration: 2, repeat: isHovered ? Infinity : 0 }}
           >
@@ -172,6 +172,7 @@ const ServiceCard = ({ icon: Icon, title, description, gradient, index }) => {
           <motion.div
             className="flex items-center gap-2 text-primary font-semibold"
             animate={{ x: isHovered ? 5 : 0 }}
+            transition={{ duration: 0.3 }}
           >
             <span>Learn More</span>
             <motion.div
@@ -393,7 +394,7 @@ export function AboutPage() {
       const rect = event.currentTarget.getBoundingClientRect();
       const x = (event.clientX - rect.left) / rect.width - 0.5;
       const y = (event.clientY - rect.top) / rect.height - 0.5;
-      
+
       rotateX.set(-y * 10);
       rotateY.set(x * 10);
     };
@@ -411,9 +412,8 @@ export function AboutPage() {
 
     return (
       <motion.div
-        className={`relative flex flex-col lg:flex-row items-start lg:items-center ${
-          isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-        }`}
+        className={`relative flex flex-col lg:flex-row items-start lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
+          }`}
         style={{
           opacity: progress,
           y: slideInY,
@@ -451,9 +451,9 @@ export function AboutPage() {
                     backgroundImage: `radial-gradient(circle at 25% 25%, currentColor 1px, transparent 1px)`,
                     backgroundSize: '20px 20px',
                   }}
-                  animate={{ 
+                  animate={{
                     x: isHovered ? [0, 20, 0] : 0,
-                    y: isHovered ? [0, 20, 0] : 0 
+                    y: isHovered ? [0, 20, 0] : 0
                   }}
                   transition={{ duration: 10, repeat: Infinity }}
                 />
@@ -473,7 +473,7 @@ export function AboutPage() {
                   </motion.div>
                   <motion.div
                     className="text-3xl font-black bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent"
-                    style={{ 
+                    style={{
                       fontFamily: 'Poppins, sans-serif',
                       opacity: textOpacity,
                       x: useTransform(progress, [0, 0.8], [isEven ? 50 : -50, 0]),
@@ -494,7 +494,7 @@ export function AboutPage() {
                   }}
                 >
                   <item.icon className="h-8 w-8 text-white" />
-                  
+
                   {/* Icon Glow */}
                   <motion.div
                     className={`absolute inset-0 bg-gradient-to-br ${item.color} rounded-2xl blur-md`}
@@ -513,7 +513,7 @@ export function AboutPage() {
                 >
                   {item.title}
                 </motion.h3>
-                
+
                 <motion.p
                   className="text-muted-foreground mb-6 leading-relaxed text-center"
                   style={{
@@ -661,7 +661,7 @@ export function AboutPage() {
       <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        
+
         {/* Animated Grid */}
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
@@ -718,7 +718,7 @@ export function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                From a summer camp idea to a pioneering tech company - we're on a mission to 
+                From a summer camp idea to a pioneering tech company - we're on a mission to
                 transform Ethiopia's technological landscape through innovation and excellence.
               </motion.p>
 
@@ -728,8 +728,8 @@ export function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Founded by passionate young innovators, we've grown from a visionary team to 
-                a full-service technology company delivering cutting-edge solutions across 
+                Founded by passionate young innovators, we've grown from a visionary team to
+                a full-service technology company delivering cutting-edge solutions across
                 cybersecurity, development, and digital services.
               </motion.p>
 
@@ -769,7 +769,7 @@ export function AboutPage() {
                       className="w-full h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                    
+
                     {/* Floating Elements Over Image */}
                     <motion.div
                       className="absolute top-6 right-6 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20"
@@ -778,7 +778,7 @@ export function AboutPage() {
                     >
                       <Rocket className="h-6 w-6 text-white" />
                     </motion.div>
-                    
+
                     <motion.div
                       className="absolute bottom-20 left-6 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20"
                       animate={{ y: [0, 10, 0] }}
@@ -797,7 +797,7 @@ export function AboutPage() {
       {/* Enhanced Stats Section */}
       <section className="py-20 bg-background relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -807,9 +807,13 @@ export function AboutPage() {
                     <motion.div
                       className="bg-gradient-to-br from-primary to-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl"
                       whileHover={{ rotate: 360, scale: 1.15 }}
-                      transition={{ duration: 0.6, type: "spring" }}
                       animate={{ y: [0, -10, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                      transition={{
+                        duration: 0.6,
+                        type: "spring",
+                        repeat: Infinity,
+                        delay: index * 0.5
+                      }}
                     >
                       <stat.icon className="h-8 w-8 text-white" />
                     </motion.div>
@@ -819,7 +823,7 @@ export function AboutPage() {
                     <div className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 font-medium">
                       {stat.label}
                     </div>
-                    
+
                     {/* Hover Effect Line */}
                     <motion.div
                       className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-primary to-orange-600 rounded-full"
@@ -1042,7 +1046,7 @@ export function AboutPage() {
                       className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    
+
                     {/* Floating Team Badge */}
                     <motion.div
                       className="absolute top-6 left-6 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
@@ -1061,12 +1065,12 @@ export function AboutPage() {
                   Built by Visionary Minds
                 </h2>
                 <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-                  Our team of 20+ young Ethiopian innovators brings fresh perspectives and 
-                  cutting-edge expertise to every project, driven by passion and a commitment 
+                  Our team of 20+ young Ethiopian innovators brings fresh perspectives and
+                  cutting-edge expertise to every project, driven by passion and a commitment
                   to excellence.
                 </p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  We believe in the power of Ethiopian talent and are dedicated to building 
+                  We believe in the power of Ethiopian talent and are dedicated to building
                   solutions that not only meet global standards but also address local challenges.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
